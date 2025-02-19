@@ -1,0 +1,19 @@
+<app-user-form (userEvent)="handleUserEvent($event)"></app-user-form>
+
+<table class="table table-bordered my-2" *ngIf="users.length > 0">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>ID</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let user of users; let i = index">
+        <th>{{user.userName}}</th>
+        <th>{{user.userEmail}}</th>
+        <th>{{user.UserID}}</th>
+        <th>
+            <button class="btn btn-sm bg-primary text-white me-1" (click)="editUser(i)">Edit</button>
+            <button class="btn btn-sm bg-danger text-white" (click)="deleteUser(i)">Delete</button>
+        </th>
+    </tr>
+</table>
